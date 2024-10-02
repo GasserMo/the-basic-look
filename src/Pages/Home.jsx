@@ -17,7 +17,7 @@ function Home() {
     <div className="flex flex-col mt-10 items-center">
       <div className="flex flex-row justify-evenly  w-full ">
         <div className="relative border rounded-lg w-[40%]  md:w-auto ">
-          <img src="/assets/product.jpg" alt="Men" className="rounded-lg  " />
+          <img src="/assets/men.webp" alt="Men" className="rounded-lg  " />
           <span
             className="homePage "
             style={{
@@ -31,7 +31,7 @@ function Home() {
           </span>
         </div>
         <div className="relative border rounded-lg w-[40%]  md:w-auto">
-          <img src="dist/assets/womenn.webp"></img>
+          <img src="/assets/women.webp"></img>
           <span
             className="homePage"
             style={{
@@ -57,7 +57,7 @@ function Home() {
           onMouseLeave={handleMouseLeave}
         >
           <img
-            src="dist/assets/summerr.webp"
+            src="/assets/summer.webp"
             alt="Men"
             className={`rounded-lg transition-all duration-300 ${
               hoveredItem === 0 ? "w-[300px]" : "w-[250px]"
@@ -78,7 +78,7 @@ function Home() {
           onMouseLeave={handleMouseLeave}
         >
           <img
-            src="dist/assets/winterr.webp"
+            src="/assets/formal.jpg"
             className={`rounded-lg transition-all duration-300 ${
               hoveredItem === 1 ? "w-[300px]" : "w-[250px]"
             }`}
@@ -100,7 +100,7 @@ function Home() {
           onClick={() => navigate("/collections/Winter")}
         >
           <img
-            src="dist/assets/formal.jpg"
+            src="/assets/winter.webp"
             width={250}
             className={`rounded-lg transition-all duration-300 ${
               hoveredItem === 2 ? "w-[300px]" : "w-[250px]"

@@ -147,7 +147,7 @@ function Header() {
           className={` ${
             isSearchOpen && `hidden md:block`
           } absolute inset-0  mx-auto   cursor-pointer`}
-          src="dist/assets/download.jpeg"
+          src="/assets/download.jpeg"
         ></img>
         {!userData ? (
           <div className="flex space-x-2 ">
