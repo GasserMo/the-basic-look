@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import {
   HiMiniUser,
@@ -9,9 +9,11 @@ import {
 } from "react-icons/hi2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getProducts } from "../services/apiProducts";
+import { gState } from "../Pages/Context";
 
 function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { data, setData } = useContext(gState);
 
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
@@ -24,6 +26,12 @@ function Header() {
   const logout = () => {
     localStorage.removeItem("userData");
     setUserData(null);
+    setData((prevState) => {
+      return {
+        ...prevState,
+        userContext: null,
+      };
+    });
     navigate("/login");
   };
   const [products, setProducts] = useState([]);
@@ -149,17 +157,17 @@ function Header() {
           } absolute inset-0  mx-auto   cursor-pointer`}
           src="/assets/download.jpeg"
         ></img>
-        {!userData ? (
-          <div className="flex space-x-2 ">
+        {data.userContext == null ? (
+          <div className="flex  space-x-2 ">
             <p
               onClick={() => navigate("/login")}
-              className="pr-2 text-l cursor-pointer hover:text-gray-600 "
+              className="pr-2  cursor-pointer hover:text-gray-600 "
             >
               Login
             </p>
             <p
               onClick={() => navigate("/register")}
-              className="pr-2 text-l cursor-pointer hover:text-gray-600 "
+              className=" pr-2   cursor-pointer hover:text-gray-600 "
             >
               Register
             </p>

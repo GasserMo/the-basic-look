@@ -13,6 +13,7 @@ function Cart() {
   const [isLoading, setIsLoading] = useState(false);
   const [checkingOut, setCheckoutOut] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+
   // New loading state
   const navigate = useNavigate();
   const dispatch = useDispatch();

@@ -20,7 +20,10 @@ function Register() {
   const [isValidName, setIsValidName] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [isRegistering, setisRegistering] = useState(false);
-
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev); // Toggle password visibility
+  };
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
   const validatePassword = (password) => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/; // At least 8 characters, 1 uppercase, 1 lowercase, 1 number
@@ -56,7 +59,7 @@ function Register() {
   };
 
   return (
-    <div className="flex flex-col mx-14 w-[40%]">
+    <div className="flex flex-col mx-14 w-[60%] md:w-[40%]">
       <Title type="thin">Welcome</Title>
       <form className="flex flex-col w-full" onSubmit={handleSubmit}>
         <div>
@@ -86,6 +89,8 @@ function Register() {
             type="password"
             placeholder="Enter your Password"
             value={password}
+            showPassword={showPassword} // Pass showPassword state
+            togglePasswordVisibility={togglePasswordVisibility}
             onChange={(e) => setPassword(e.target.value)}
             isValid={isValidPassword}
             validationMessage="Your password must be atleast 8 characters long

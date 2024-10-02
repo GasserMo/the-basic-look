@@ -28,6 +28,7 @@ const Context = ({ children }) => {
 */
     sessionId: "",
     totalPrice: null,
+    userContext: null,
   });
 
   return (

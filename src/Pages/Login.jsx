@@ -1,18 +1,24 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FormRow from "../ui/FormRow";
 import Title from "../ui/Title";
 import { useLogin } from "../features/authentication/useAuth";
 import { loginUser } from "../services/apiAuth";
 import { useNavigate } from "react-router-dom";
+import { gState } from "../Pages/Context";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"; // Import eye icons
 
 function Login({ setUserData }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(""); // State to store error message
-
+  const { setData } = useContext(gState);
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev); // Toggle password visibility
+  };
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -25,7 +31,12 @@ function Login({ setUserData }) {
 
     try {
       const data = await loginUser({ email, password });
-
+      await setData((prevState) => {
+        return {
+          ...prevState,
+          userContext: data,
+        };
+      });
       navigate("/home");
     } catch (error) {
       setErrorMessage("User or Password is Incorrect");
@@ -35,7 +46,7 @@ function Login({ setUserData }) {
   };
 
   return (
-    <div className="w-[40%] mx-14">
+    <div className="w-[60%] md:w-[40%] mx-14">
       <div className="flex flex-col justify-start items-start ">
         <Title type="thin">Welcome Back!</Title>
         <form
@@ -57,9 +68,11 @@ function Login({ setUserData }) {
               value={password}
               label="Password"
               id="password"
-              type="text"
+              type="password"
               placeholder="Enter your Password"
               onChange={(e) => setPassword(e.target.value)}
+              showPassword={showPassword} // Pass showPassword state
+              togglePasswordVisibility={togglePasswordVisibility}
             />
           </div>
           {errorMessage && (

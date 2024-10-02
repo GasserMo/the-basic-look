@@ -7,6 +7,8 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 function CartItem({ item }) {
   const dispatch = useDispatch();
+  if (!item.product) return null; // Handle undefined item and product
+
   const handleRemove = () => {
     dispatch(
       deleteFromCart({
@@ -29,7 +31,10 @@ function CartItem({ item }) {
   };
 
   return (
-    <div className="border mx-8  flex min-w-[50%] max-w-[90%] min-h-48 max-h-64 mt-1 mb-5">
+    <div
+      className="border mx-8  flex min-w-[50%]
+     max-w-[90%] min-h-48 max-h-64 mt-1 mb-5"
+    >
       <img
         src={`https://chicwardrobe-znz5.onrender.com/${item.product.image}`}
         width="100px"

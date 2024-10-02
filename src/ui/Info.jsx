@@ -43,7 +43,7 @@ function Info() {
             Men
           </p>
           <p
-            onClick={() => navigate(`/collections/Masculine`)}
+            onClick={() => navigate(`/collections/feminine`)}
             className="font-normal hover:text-gray-500 text-white 
             cursor-pointer transition duration-500 ease-in-out transform"
           >
