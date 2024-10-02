@@ -7,8 +7,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Products from "./Pages/Products";
 import Register from "./Pages/Register";
-import Header from "./ui/Header";
-import Info from "./ui/Info";
+
 import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProductDetails from "./Pages/ProductDetails";
@@ -17,6 +16,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Contact from "./Pages/Contact";
 import Checkout from "./Pages/Checkout";
 import Context from "./Pages/Context";
+import Shipping from "./Pages/Shipping";
+import ExchangePolicy from "./Pages/ExchangePolicy";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,15 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/shipping",
+        element: <Shipping />,
+      },
+
+      {
+        path: "/exchange-policy",
+        element: <ExchangePolicy />,
       },
       {
         path: "/contact",

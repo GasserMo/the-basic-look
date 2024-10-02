@@ -9,6 +9,7 @@
   .homePage {
     @apply absolute flex justify-center items-center text-black font-bold
     border-2 border-white bg-white  px-9 py-2 rounded-lg  hover:text-white
-     hover:border-black hover:bg-slate-500  cursor-pointer transition duration-500 ease-in-out transform hover:scale-100;
+     hover:border-black hover:bg-slate-500  cursor-pointer transition 
+     duration-500 ease-in-out transform hover:scale-100;
   }
 }

@@ -45,7 +45,7 @@ function Login({ setUserData }) {
           <div className="">
             <FormRow
               value={email}
-              label="email"
+              label="Email"
               id="email"
               type="text"
               placeholder="Enter your Email"
@@ -55,7 +55,7 @@ function Login({ setUserData }) {
             />
             <FormRow
               value={password}
-              label="password"
+              label="Password"
               id="password"
               type="text"
               placeholder="Enter your Password"

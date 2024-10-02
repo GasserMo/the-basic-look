@@ -1,11 +1,13 @@
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Info() {
   const handleSocialClick = (url) => {
     window.open(url, "_blank");
   };
+  const navigate = useNavigate();
   return (
-    <div className="bg-gray-800 flex justify-around mt-5">
+    <div className="bg-gray-800 flex justify-around mt-5 pb-8">
       <div className="flex flex-col ">
         <p className="font-bold text-white mt-5 mb-5">Follow us</p>
         <div className="flex space-x-2 ">
@@ -29,27 +31,43 @@ function Info() {
           />
         </div>
       </div>
-      <div className="flex flex-col ">
-        <p className="font-bold text-white mt-5  mb-5">Useful Links</p>
-        <div className="mb-5">
-          <p className="font-normal text-white ">Insta</p>
-          <p className="font-normal text-white ">Insta</p>
-          <p className="font-normal text-white ">Insta</p>
-        </div>
-      </div>
+
       <div className="flex flex-col  ">
         <p className="font-bold text-white mt-5 mb-5">Shop</p>
         <div>
-          <p className="font-normal text-white ">Men</p>
-          <p className="font-normal text-white ">Women</p>
+          <p
+            onClick={() => navigate(`/collections/Masculine`)}
+            className="font-normal hover:text-gray-500 text-white 
+            cursor-pointer transition duration-500 ease-in-out transform"
+          >
+            Men
+          </p>
+          <p
+            onClick={() => navigate(`/collections/Masculine`)}
+            className="font-normal hover:text-gray-500 text-white 
+            cursor-pointer transition duration-500 ease-in-out transform"
+          >
+            Women
+          </p>
         </div>
       </div>
       <div className="flex flex-col ">
         <p className="font-bold text-white mt-5 mb-5">Store Policies</p>
         <div>
-          <p className="font-normal text-white ">Shipping & Delivery</p>
-          <p className="font-normal text-white ">Exchange & Refund Policy</p>
-          <p className="font-normal text-white ">Privacy Policy</p>
+          <p
+            onClick={() => navigate("/shipping")}
+            className="font-normal hover:text-gray-500 text-white 
+            cursor-pointer transition duration-500 ease-in-out transform"
+          >
+            Shipping & Delivery
+          </p>
+          <p
+            onClick={() => navigate("/exchange-policy")}
+            className="font-normal hover:text-gray-500 text-white 
+            cursor-pointer transition duration-500 ease-in-out transform"
+          >
+            Exchange & Refund Policy
+          </p>
         </div>
       </div>
     </div>
