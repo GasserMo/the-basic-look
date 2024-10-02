@@ -17,7 +17,11 @@ function Home() {
     <div className="flex flex-col mt-10 items-center">
       <div className="flex flex-row justify-evenly  w-full ">
         <div className="relative border rounded-lg w-[40%]  md:w-auto ">
-          <img src="/assets/menn.webp" alt="Men" className="rounded-lg  " />
+          <img
+            src="public/assets/product.jpg"
+            alt="Men"
+            className="rounded-lg  "
+          />
           <span
             className="homePage "
             style={{
