@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById } from "../services/apiProducts";
 import Product from "../features/Products/Product";
@@ -10,10 +10,14 @@ import { addToCart, fetchCart } from "../features/Cart/cartSlice";
 import { HiCheckCircle } from "react-icons/hi2"; // Importing mail and check mark icons
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { gState } from "../Pages/Context";
+
 function ProductDetails() {
   const { productId } = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { data } = useContext(gState);
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -39,7 +43,7 @@ function ProductDetails() {
   const dispatch = useDispatch();
 
   async function handleAddItem() {
-    if (!userData) {
+    if (!userData || !data.userContext) {
       toast.error("You need to log in before adding items to the cart.");
       return;
     }
