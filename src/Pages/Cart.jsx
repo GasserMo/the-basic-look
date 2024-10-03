@@ -87,7 +87,7 @@ function Cart() {
           ))}
         </div>
         <hr></hr>
-        <div className=" border  flex flex-col md:w-[30%] mx-4 md:right-0 md:mr-8 my-5">
+        <div className="   flex flex-col md:w-[30%] mx-4 md:right-0 md:mr-8 my-5">
           <div>
             <p className="text-lg">Total: {totalPrice} EGP</p>
             <p className="text-md">Shipping calculated at checkout</p>

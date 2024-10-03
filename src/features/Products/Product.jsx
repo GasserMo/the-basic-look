@@ -4,14 +4,17 @@ import { useNavigate } from "react-router-dom";
 function Product({ product }) {
   const navigate = useNavigate();
   return (
-    <div className="w-[40%] border flex flex-col flex-auto md:min-w-[25%] md:max-w-[30%] md:border py-5">
+    <div
+      className="w-[40%] border flex flex-col flex-auto
+     md:min-w-[25%] md:max-w-[30%] md:border py-5"
+    >
       <img
         className="mx-auto"
         src={`https://chicwardrobe-znz5.onrender.com/${product.image}`}
         width={220}
         alt={product.name}
       />
-      <p className="mx-auto overflow-hidden overflow-ellipsis w-full  whitespace-nowrap">
+      <p className="mx-auto overflow-hidden overflow-ellipsis w-full md:w-auto  whitespace-nowrap">
         {product.name}
       </p>
       <p className="mx-auto overflow-hidden text-ellipsis whitespace-nowrap">

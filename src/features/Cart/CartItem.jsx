@@ -37,7 +37,7 @@ function CartItem({ item }) {
     >
       <img
         src={`https://chicwardrobe-znz5.onrender.com/${item.product.image}`}
-        width="100px"
+        width="150px"
         alt={item.product.name}
       />
       <div className="mx-5 justify-evenly flex flex-col items-start">

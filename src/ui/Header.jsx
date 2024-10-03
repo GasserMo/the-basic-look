@@ -6,6 +6,7 @@ import {
   HiMagnifyingGlass,
   HiShoppingCart,
   HiOutlineUser,
+  HiOutlineArrowRightEndOnRectangle,
 } from "react-icons/hi2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getProducts } from "../services/apiProducts";
@@ -154,7 +155,7 @@ function Header() {
           onClick={() => navigate("/home")}
           className={` ${
             isSearchOpen && `hidden md:block`
-          } absolute md:inset-1 inset-x-1 mx-auto w-1/2  md:w-auto cursor-pointer`}
+          } absolute md:inset-1 inset-1 mx-auto w-[40%]  md:w-auto cursor-pointer`}
           src="/assets/download.jpeg"
         ></img>
         {data.userContext == null ? (
@@ -177,27 +178,25 @@ function Header() {
                   ? () => navigate("/login")
                   : () => navigate("/account")
               }
-              className="md:hidden m-2 text-2xl cursor-pointer hover:text-gray-600"
+              className="md:hidden m-2 text-xl cursor-pointer hover:text-gray-600"
             />
           </div>
         ) : (
-          <div className="flex ">
-            <HiShoppingCart
-              className="md:m-2 mr-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
-              onClick={() => navigate("/cart")}
-            />
-            <HiMiniUser
-              className="md:m-2  md:text-2xl text-xl cursor-pointer hover:text-gray-600"
-              onClick={() => navigate("/account")}
-            />{" "}
-            <span
-              className="md:m-2  cursor-pointer hidden md:block hover:text-gray-600"
+          <div className=" flex ">
+            <div className="flex">
+              <HiShoppingCart
+                className="md:m-2 my-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
+                onClick={() => navigate("/cart")}
+              />
+              <HiMiniUser
+                className="md:m-2 my-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
+                onClick={() => navigate("/account")}
+              />{" "}
+            </div>
+            <HiOutlineArrowRightEndOnRectangle
+              className="md:m-2 my-2  md:text-2xl text-xl cursor-pointer hover:text-gray-600"
               onClick={logout}
-            >
-              {" "}
-              {""}
-              Logout
-            </span>
+            />
           </div>
         )}
       </div>
