@@ -126,7 +126,7 @@ function ProductDetails() {
           </div>
         ) : isSubmitted ? (
           <div
-            className="flex justify-center items-center w-[50%] bg-black text-white
+            className="flex justify-center items-center w-[50%] md:w-[30%] bg-black text-white
            text-center font-sans rounded-lg py-1 px-5"
           >
             <HiCheckCircle size={20} />

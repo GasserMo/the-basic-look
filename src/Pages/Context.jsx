@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 export const gState = createContext();
 
 const Context = ({ children }) => {
@@ -30,7 +30,7 @@ const Context = ({ children }) => {
     totalPrice: null,
     userContext: null,
   });
-  useEffect(() => {
+  /*  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       // Fetch user data based on the token or just store the token
@@ -39,7 +39,7 @@ const Context = ({ children }) => {
         userContext: { token }, // You might want to fetch user info using this token
       }));
     }
-  }, []);
+  }, []); */
   return (
     <gState.Provider value={{ data, setData }}>{children}</gState.Provider>
   );
