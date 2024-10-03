@@ -59,7 +59,7 @@ function Register() {
   };
 
   return (
-    <div className="flex flex-col mx-14 w-[60%] md:w-[40%]">
+    <div className="flex flex-col mx-14 w-[70%] md:w-[40%]">
       <Title type="thin">Welcome</Title>
       <form className="flex flex-col w-full" onSubmit={handleSubmit}>
         <div>

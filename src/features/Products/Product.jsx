@@ -11,7 +11,7 @@ function Product({ product }) {
         width={220}
         alt={product.name}
       />
-      <p className="mx-auto overflow-hidden text-ellipsis whitespace-nowrap">
+      <p className="mx-auto overflow-hidden overflow-ellipsis w-full  whitespace-nowrap">
         {product.name}
       </p>
       <p className="mx-auto overflow-hidden text-ellipsis whitespace-nowrap">

@@ -7,8 +7,8 @@ function Info() {
   };
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-800 flex justify-around mt-5 pb-8">
-      <div className="flex flex-col ">
+    <div className="bg-gray-800 flex justify-around px-5 mt-5 pb-8">
+      <div className="flex flex-col w-[30%]">
         <p className="font-bold text-white mt-5 mb-5">Follow us</p>
         <div className="flex space-x-2 ">
           <FaFacebook
@@ -32,7 +32,7 @@ function Info() {
         </div>
       </div>
 
-      <div className="flex flex-col  ">
+      <div className="flex flex-col   w-[30%]">
         <p className="font-bold text-white mt-5 mb-5">Shop</p>
         <div>
           <p
@@ -51,7 +51,7 @@ function Info() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col  w-[30%] ">
         <p className="font-bold text-white mt-5 mb-5">Store Policies</p>
         <div>
           <p

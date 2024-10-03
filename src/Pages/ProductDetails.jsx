@@ -80,14 +80,14 @@ function ProductDetails() {
   }
 
   return (
-    <div className="flex  mb-8 p-10 ">
+    <div className="flex flex-col md:flex md:flex-row  mb-8 p-10 ">
       <img
-        className="w-[40%] md:w-[20%] "
+        className="w-[90%] md:w-[20%] "
         src={`https://chicwardrobe-znz5.onrender.com/${product.image}`}
         width={200}
         alt={product.name}
       />
-      <div className="flex-col items-start font-light w-[50%] ml-5 ">
+      <div className="md:flex-col md:items-start font-light md:w-[60%] md:ml-5 ">
         <p className="mx-auto text-ellipsis text-xl">
           <span> Name: </span>
           {product.name}
@@ -122,11 +122,11 @@ function ProductDetails() {
           </div>
         ) : isSubmitted ? (
           <div
-            className="flex justify-center items-center w-[30%] bg-black text-white
-           text-center font-sans rounded-lg "
+            className="flex justify-center items-center w-[50%] bg-black text-white
+           text-center font-sans rounded-lg py-1 px-5"
           >
             <HiCheckCircle size={20} />
-            <p className="items-center ">Success</p>
+            <p className="items-center  ">Success</p>
           </div>
         ) : (
           <button

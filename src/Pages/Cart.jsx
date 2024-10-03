@@ -80,14 +80,14 @@ function Cart() {
     <div className="my-12">
       <p className="font-bold text-2xl my-8 text-center">My Cart</p>
       <hr className="border-t border-gray-200 my-5" />
-      <div className="flex justify-between ">
+      <div className="md:flex md:justify-between ">
         <div className="flex flex-col w-[60%]  ">
           {cart.map((item) => (
             <CartItem item={item} key={item._id} />
           ))}
         </div>
-
-        <div className="flex flex-col w-[30%]  right-0 mr-8 my-5">
+        <hr></hr>
+        <div className=" border  flex flex-col md:w-[30%] mx-4 md:right-0 md:mr-8 my-5">
           <div>
             <p className="text-lg">Total: {totalPrice} EGP</p>
             <p className="text-md">Shipping calculated at checkout</p>

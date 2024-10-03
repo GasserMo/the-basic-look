@@ -46,7 +46,7 @@ function Login({ setUserData }) {
   };
 
   return (
-    <div className="w-[60%] md:w-[40%] mx-14">
+    <div className="w-[70%] md:w-[40%] mx-14">
       <div className="flex flex-col justify-start items-start ">
         <Title type="thin">Welcome Back!</Title>
         <form

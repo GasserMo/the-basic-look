@@ -171,7 +171,10 @@ function Account() {
             </div>
           </div>
         ) : (
-          <p>You havent ordered yet</p>
+          <div>
+            <p className="font-medium text-lg">Orders</p>
+            <p className="my-2 ">You havent ordered yet</p>
+          </div>
         )}
 
         <div>
@@ -243,7 +246,7 @@ function Account() {
             )}
             {addAddress && (
               <form
-                className="font-thin flex flex-col w-[50%]"
+                className="font-thin flex flex-col md:w-[50%] w-[90%]"
                 onSubmit={handleSubmit}
               >
                 <div className="">
@@ -301,7 +304,8 @@ function Account() {
                 <button
                   type="submit"
                   disabled={isPending}
-                  className={`cursor-pointer  bg-gray-800 text-white rounded-full
+                  className={`cursor-pointer 
+                     bg-gray-800 text-white rounded-full
                  px-4 py-2 transition duration-300 
                hover:bg-gray-700  ${
                  isPending ? "opacity-50 cursor-not-allowed" : ""
@@ -317,8 +321,8 @@ function Account() {
             )}{" "}
             {!addAddress && (
               <p
-                className="bg-gray-800 text-white rounded-full w-[40%] px-4 py-2
-                md:cursor-pointer md:w-[20%] md:transition md:duration-300 
+                className="bg-gray-800 text-white rounded-full w-[80%] px-4 py-2
+                md:cursor-pointer md:w-[20%]  md:transition md:duration-300 
             md:hover:bg-gray-700"
                 onClick={() => setAddAddress((open) => !open)}
               >

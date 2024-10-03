@@ -123,7 +123,7 @@ function Header() {
           </form>
         ) : (
           <HiMagnifyingGlass
-            className=" text-3xl mt-2 cursor-pointer hover:text-gray-700"
+            className="md:text-3xl text-xl  md:mt-2 cursor-pointer hover:text-gray-700"
             onClick={handleOpenSearch}
           />
         )}
@@ -154,36 +154,44 @@ function Header() {
           onClick={() => navigate("/home")}
           className={` ${
             isSearchOpen && `hidden md:block`
-          } absolute inset-0  mx-auto   cursor-pointer`}
+          } absolute md:inset-1 inset-x-1 mx-auto w-1/2  md:w-auto cursor-pointer`}
           src="/assets/download.jpeg"
         ></img>
         {data.userContext == null ? (
           <div className="flex  space-x-2 ">
             <p
               onClick={() => navigate("/login")}
-              className="pr-2  cursor-pointer hover:text-gray-600 "
+              className="pr-2 hidden md:block  cursor-pointer hover:text-gray-600 "
             >
               Login
             </p>
             <p
               onClick={() => navigate("/register")}
-              className=" pr-2   cursor-pointer hover:text-gray-600 "
+              className="hidden md:block pr-2   cursor-pointer hover:text-gray-600 "
             >
               Register
             </p>
+            <HiMiniUser
+              onClick={
+                data.userContext == null
+                  ? () => navigate("/login")
+                  : () => navigate("/account")
+              }
+              className="md:hidden m-2 text-2xl cursor-pointer hover:text-gray-600"
+            />
           </div>
         ) : (
-          <div className="flex">
+          <div className="flex ">
             <HiShoppingCart
-              className="m-2 text-2xl cursor-pointer hover:text-gray-600"
+              className="md:m-2 mr-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
               onClick={() => navigate("/cart")}
             />
             <HiMiniUser
-              className="m-2 text-2xl cursor-pointer hover:text-gray-600"
+              className="md:m-2  md:text-2xl text-xl cursor-pointer hover:text-gray-600"
               onClick={() => navigate("/account")}
             />{" "}
             <span
-              className="m-2 cursor-pointer hidden md:block hover:text-gray-600"
+              className="md:m-2  cursor-pointer hidden md:block hover:text-gray-600"
               onClick={logout}
             >
               {" "}

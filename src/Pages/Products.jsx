@@ -39,7 +39,7 @@ function Products() {
           <div className="h-2 w-2 bg-black rounded-full animate-bounce"></div>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4  w-[75%]">
+        <div className="flex flex-wrap gap-4   w-[85%]">
           {products.map((product) => (
             <Product key={product._id} product={product} />
           ))}

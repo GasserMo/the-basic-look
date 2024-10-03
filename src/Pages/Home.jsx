@@ -47,9 +47,11 @@ function Home() {
         </div>
       </div>
       <br></br>
-      <p className="text-black font-bold pt-10 pb-10 text-xl">Collections</p>
+      <p className="text-black font-extrabold pt-10 pb-10 text-2xl">
+        Collections
+      </p>
 
-      <div className="flex justify-between mb-10 cursor-pointer">
+      <div className=" md:flex md:justify-between md:mb-10 md:cursor-pointer">
         <div
           className="rounded-lg mx-11 "
           onClick={() => navigate("/collections/Summer")}
@@ -65,8 +67,8 @@ function Home() {
             width={250}
           />
           <p
-            className=" rounded-md text-black font-bold 
-           border-black border-2 bg-transparent py-2 mt-2 text-center md:md-collection"
+            className=" rounded-md text-black font-thin 
+           border-gray-500 border-2 bg-transparent py-2 md:mt-2 my-5 text-center md:md-collection"
           >
             Summer Collection
           </p>
@@ -85,8 +87,8 @@ function Home() {
             width={300}
           ></img>
           <p
-            className=" rounded-md text-black font-bold
-            border-black border-2 bg-transparent py-2 mt-2
+            className=" rounded-md text-black font-thin 
+            border-gray-500 border-2 bg-transparent py-2 md:mt-2 my-5
              text-center md:md-collection
             "
           >
@@ -107,8 +109,8 @@ function Home() {
             }`}
           ></img>
           <p
-            className=" rounded-md text-black font-bold
-            border-black border-2 bg-transparent py-2 mt-2
+            className=" rounded-md text-black font-thin 
+            border-gray-500 border-2 bg-transparent py-2 md:mt-2 my-5
              text-center md:md-collection
             "
           >

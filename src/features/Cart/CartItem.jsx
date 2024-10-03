@@ -32,8 +32,8 @@ function CartItem({ item }) {
 
   return (
     <div
-      className="border mx-8  flex min-w-[50%]
-     max-w-[90%] min-h-48 max-h-64 mt-1 mb-5"
+      className="md:border mx-8  flex min-w-[50%]
+     max-w-[90%] min-h-48 max-h-64 mt-1 md:mb-5 mb-2 "
     >
       <img
         src={`https://chicwardrobe-znz5.onrender.com/${item.product.image}`}
@@ -41,7 +41,7 @@ function CartItem({ item }) {
         alt={item.product.name}
       />
       <div className="mx-5 justify-evenly flex flex-col items-start">
-        <p className="font-bold overflow-hidden text-ellipsis whitespace-wrap line-clamp-3">
+        <p className="font-bold overflow-hidden text-ellipsis whitespace-wrap line-clamp-2 md:line-clamp-3">
           {item.product.name}
         </p>
         <p>Price: {item.product.price} EGP</p>
