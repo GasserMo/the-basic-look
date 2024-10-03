@@ -90,6 +90,12 @@ function Header() {
     setSearchTerm(product.name);
     setFilteredSuggestions([]);
   };
+  const handleSearchSubmit = (e) => {
+    e.preventDefault(); // Prevent the form from submitting
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm}`);
+    }
+  };
 
   useEffect(() => {
     handleCloseSearch();
@@ -106,7 +112,10 @@ function Header() {
       </div>
       <div className="relative flex items-center justify-between px-5 mt-5">
         {isSearchOpen ? (
-          <form className="flex items-center justify-center p-2">
+          <form
+            onSubmit={handleSearchSubmit}
+            className="flex items-center justify-center p-2"
+          >
             <input
               type="text"
               value={searchTerm}

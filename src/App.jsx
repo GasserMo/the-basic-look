@@ -18,6 +18,7 @@ import Checkout from "./Pages/Checkout";
 import Context from "./Pages/Context";
 import Shipping from "./Pages/Shipping";
 import ExchangePolicy from "./Pages/ExchangePolicy";
+import SearchResults from "./Pages/SearchResults";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/search",
+        element: <SearchResults />,
       },
       {
         path: "/products/:productId",
