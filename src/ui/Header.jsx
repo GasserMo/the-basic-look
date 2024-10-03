@@ -183,13 +183,13 @@ function Header() {
           </div>
         ) : (
           <div className=" flex ">
-            <div className="flex">
+            <div className="flex ">
               <HiShoppingCart
-                className="md:m-2 my-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
+                className="md:m-2 my-2  md:text-2xl text-xl cursor-pointer hover:text-gray-600"
                 onClick={() => navigate("/cart")}
               />
               <HiMiniUser
-                className="md:m-2 my-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
+                className="md:m-2 my-2 mx-2 md:text-2xl text-xl cursor-pointer hover:text-gray-600"
                 onClick={() => navigate("/account")}
               />{" "}
             </div>
