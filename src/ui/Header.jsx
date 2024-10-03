@@ -34,6 +34,15 @@ function Header() {
       };
     });
     navigate("/login");
+    /* localStorage.removeItem("userData");
+    setUserData(null);
+    setData((prevState) => {
+      return {
+        ...prevState,
+        userContext: null,
+      };
+    });
+    navigate("/login"); */
   };
   const [products, setProducts] = useState([]);
   useEffect(() => {

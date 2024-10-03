@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 export const gState = createContext();
 
 const Context = ({ children }) => {
@@ -30,6 +30,15 @@ const Context = ({ children }) => {
     totalPrice: null,
     userContext: null,
   });
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      setData((prevState) => ({
+        ...prevState,
+        userContext: JSON.parse(storedUserData), // Restore user context from localStorage
+      }));
+    }
+  }, []);
   /*  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
