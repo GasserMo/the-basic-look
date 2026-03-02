@@ -14,6 +14,7 @@ function FormRow({
   validationMessage,
   showPassword, // New prop to control password visibility
   togglePasswordVisibility,
+  maxLength,
 }) {
   return (
     <div className="flex flex-col mb-4 relative">
@@ -21,13 +22,34 @@ function FormRow({
       <div className="relative">
         {" "}
         {/* Wrapper for input and icon */}
+        {type === "number" && (
+          <style>{`
+            #${id}::-webkit-outer-spin-button,
+            #${id}::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            #${id}[type=number] {
+              -moz-appearance: textfield;
+            }
+          `}</style>
+        )}
+        {type === "number" && (
+          <div className="absolute left-3 top-4 flex items-center gap-2">
+            <img src="/assets/egypt.svg" alt="Egypt" className="w-6 h-4" />
+            <span className="text-sm font-semibold">+20</span>
+          </div>
+        )}
         <input
           type={showPassword ? "text" : type} // Change input type based on showPassword
           id={id}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          className={`border font-thin text-sm rounded-sm p-4 pr-10 mb-1 w-full // Added pr-10 for padding right
+          maxLength={maxLength}
+          className={`border font-thin text-sm rounded-sm p-4 ${
+            type === "number" ? "pl-20" : "pr-10"
+          } mb-1 w-full // Added pr-10 for padding right
           ${
             isValid === false
               ? "border-red-500"

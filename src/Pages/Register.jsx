@@ -12,12 +12,14 @@ import { useRegister } from "../features/authentication/useAuth";
 
 function Register() {
   const [name, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [isValidEmail, setIsValidEmail] = useState(null);
   const [isValidPassword, setIsValidPassword] = useState(null);
   const [isValidName, setIsValidName] = useState(null);
+  const [isValidPhone, setIsValidPhone] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [isRegistering, setisRegistering] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
@@ -37,15 +39,22 @@ function Register() {
     const emailValid = validateEmail(email);
     const passwordValid = validatePassword(password);
     const nameValid = name.trim().length >= 3;
+    const phoneValid = phone.trim().length === 10;
 
     setIsValidName(nameValid);
     setIsValidEmail(emailValid);
     setIsValidPassword(passwordValid);
+    setIsValidPhone(phoneValid);
+
+    // Check if all validations pass before proceeding
+    if (!emailValid || !passwordValid || !nameValid || !phoneValid || !email || !password || !name || !phone) {
+      return;
+    }
+
     setisRegistering(true);
-    if (!email || !password || !name) return;
 
     try {
-      await registerUser({ name, email, password });
+      await registerUser({ name, email, password, phone });
       navigate("/home");
     } catch (error) {
       if (error.message.includes("Email address already exists")) {
@@ -72,6 +81,16 @@ function Register() {
             onChange={(e) => setFullName(e.target.value)}
             isValid={isValidName}
             validationMessage="Name must be at least 3 characters long"
+          />
+          <FormRow
+            label="Phone Number"
+            id="phone"
+            type="number"
+            placeholder="Enter your Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value.slice(0, 10))}
+            isValid={isValidPhone}
+            validationMessage="Phone number must be 10 digits long"
           />
           <FormRow
             label="Email"
